@@ -1,0 +1,13 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4"><i class="fas fa-globe-europe"></i><strong> Mundo Cine </strong><i class="fas fa-theater-masks"></i></h1>
+        <p class="lead">Descubre y está al dia de todo sobre el cine.</p>
+    </div>
+</div>
+
+<div class="container">
+    <br>
+    <app-gallery-box [movies]="cinemaList | slice:0:7" title="Peliculas en cine"></app-gallery-box>
+    <br>
+    <app-gallery-box [movies]="populars | slice:7:15" title="Peliculas populares"></app-gallery-box>
+</div>

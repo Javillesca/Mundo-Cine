@@ -1,0 +1,14 @@
+<div class="container main-container">
+    <div class="row animated fadeIn">
+        <div class="card-columns">
+            <div class="card" *ngFor="let movie of ms.movies">
+                <img [src]="movie | getImg" class="card-img-top" [alt]="movie.original_title">
+                <div class="card-body">
+                    <h5 class="card-title">{{ movie.original_title }}</h5>
+                    <p class="card-text text-justify">{{ movie.overview |slice:0:300 }}...</p>
+                    <button type="button" class="btn btn-outline-primary btn-block" [routerLink]="['/detail', movie.id, 'search', search]">Ver mas..</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
