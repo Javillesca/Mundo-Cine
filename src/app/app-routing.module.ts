@@ -5,12 +5,12 @@ import { DetailComponent } from './pages/detail/detail.component';
 import { SearchComponent } from './pages/search/search.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'detail/:id/:page', component: DetailComponent },
   { path: 'detail/:id/:page/:search', component: DetailComponent },
   { path: 'search', component: SearchComponent },
   { path: 'search/:movie', component: SearchComponent },
-  { path: '**', pathMatch: 'full', redirectTo: 'home' }
+  { path: '**', pathMatch: 'full', redirectTo: '' }
 ];
 
 @NgModule({

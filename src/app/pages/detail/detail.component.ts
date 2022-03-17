@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { MoviesAppService } from '../../services/movies-app.service';
@@ -9,22 +9,22 @@ import { MoviesAppService } from '../../services/movies-app.service';
   styleUrls: ['./detail.component.css']
 })
 
-export class DetailComponent implements OnInit {
+export class DetailComponent {
 
   movie: any;
   id: string ;
-  playerVars = {
-    cc_lang_pref: 'es'
-  };
+  playerVars = { cc_lang_pref: 'es' };
   videos: any[];
   video: string;
   sourcePage: string = '';
   search: string = '';
 
-  constructor(public ms: MoviesAppService,
-              public aRoute: ActivatedRoute) {
+  constructor( public ms: MoviesAppService, public aRoute: ActivatedRoute ) {
+
                 this.aRoute.params.subscribe(data => {
+
                   this.sourcePage = data.page;
+
                   if ( data.search ) {
                     this.search = data.search;
                   }
@@ -33,13 +33,12 @@ export class DetailComponent implements OnInit {
                     if (videos) {
                       this.id = videos.key ;
                     }
+
                   });
 
                   this.ms.getMovie(data.id).subscribe( movie => this.movie = movie );
 
                 });
-  }
-  ngOnInit(): void {
   }
 
 }
